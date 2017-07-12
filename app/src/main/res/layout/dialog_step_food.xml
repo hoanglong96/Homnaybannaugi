@@ -17,14 +17,14 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="5dp">
+                android:padding="8dp">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <ImageView
                         android:id="@+id/image_food_dialog"
-                        android:layout_width="350dp"
+                        android:layout_width="320dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/background"

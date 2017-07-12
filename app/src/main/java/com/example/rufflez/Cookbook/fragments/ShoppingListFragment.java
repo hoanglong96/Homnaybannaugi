@@ -62,7 +62,7 @@ public class ShoppingListFragment extends Fragment{
                 builder.setPositiveButton("Vâng", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        recyclerView.setAdapter(null);
+                        recyclerView_shop.setAdapter(null);
                     }
                 });
                 AlertDialog alertDialog = builder.create();

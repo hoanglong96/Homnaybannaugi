@@ -15,7 +15,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,9 +27,6 @@ import android.widget.TextView;
 import com.example.rufflez.Cookbook.databases.DatabaseHandle;
 import com.example.rufflez.Cookbook.databases.FoodModel;
 import com.example.rufflez.myapplication.R;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class DetailFoodActivity extends AppCompatActivity {
     private static final String TAG = DetailFoodActivity.class.toString();
@@ -53,21 +49,6 @@ public class DetailFoodActivity extends AppCompatActivity {
     private boolean isCheckAll;
     public  static  String i[];
 
-    public static List<String> trees = Arrays.asList(
-            "7-8 lạng gà ta",
-            "50ml mật ong rừng",
-            "Nước mắm",
-            "Mì chính",
-            "Hạt tiêu",
-            "Tỏi khô",
-            "Gừng tươi băm nhỏ",
-            "Bột mỳ",
-            "Ớt tươi",
-            "Dầu ăn"
-    );
-    SparseBooleanArray clickedItemPositions = new SparseBooleanArray();
-    String valueItemCheck = null;
-    public static String[] itemCheckList = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

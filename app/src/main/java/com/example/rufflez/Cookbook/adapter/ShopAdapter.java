@@ -2,9 +2,11 @@ package com.example.rufflez.Cookbook.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.rufflez.Cookbook.databases.DatabaseHandle;
 import com.example.rufflez.Cookbook.databases.FoodModel;
 import com.example.rufflez.Cookbook.dialog.DialogFragment;
 import com.example.rufflez.myapplication.R;
@@ -48,7 +51,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         final FoodModel singleItemModel = singleItemModelList.get(position);
         holder.foodtile.setText(singleItemModel.getTitleFood());
 
@@ -69,6 +72,32 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
                 dialogFragment.setArguments(bundle);
             }
         });
+        holder.ivDelITem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(singleItemModel.isNguyenLieuDaChon()){
+//                    singleItemModel.setNguyenLieuDaChon(false);
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setMessage("Bạn muốn xóa tất món này không ?");
+                    builder.setCancelable(true);
+                    builder.setNegativeButton("Không!", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Vâng", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            DatabaseHandle.getHandle(context).setShopping(false,singleItemModel);
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
+                Log.d(TAG, "onClick: Sao k xóa :3");
+            }
+        });
         Log.d(TAG, "onBindViewHolder: " + i);
     }
 
@@ -81,6 +110,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
         TextView foodtile;
         //ListView listView;
         ImageView ivCook;
+        ImageView ivDelITem;
         RecyclerView recyclerView;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -88,6 +118,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
             //listView = itemView.findViewById(R.id.lv_nguyen_lieu);
             recyclerView = itemView.findViewById(R.id.lv_nguyen_lieu);
             ivCook = itemView.findViewById(R.id.btn_cook);
+            ivDelITem = itemView.findViewById(R.id.btn_del_item_cook);
         }
     }
 

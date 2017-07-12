@@ -11,10 +11,6 @@
             android:icon="@drawable/heart"
             android:title="Món ăn yêu thích" />
         <item
-            android:id="@+id/nav_list_food"
-            android:icon="@drawable/ic_list_24"
-            android:title="Thực đơn hôm nay" />
-        <item
             android:id="@+id/nav_shop"
             android:icon="@drawable/cart_24dp"
             android:title="Đi chợ mua gì?" />

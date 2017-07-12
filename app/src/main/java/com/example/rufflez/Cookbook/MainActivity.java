@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.rufflez.Cookbook.databases.FoodModel;
-import com.example.rufflez.Cookbook.examplerecyclerview.RecyclerViewActivity;
 import com.example.rufflez.Cookbook.fragments.FavoritesFragment;
 import com.example.rufflez.Cookbook.fragments.HomeFragment;
 import com.example.rufflez.Cookbook.fragments.ShoppingListFragment;
@@ -150,9 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.replace(R.id.content,favoritesFragment);
             ft.addToBackStack(favoritesFragment.getClass().getName());
             ft.commit();
-        } else if (id == R.id.nav_list_food) {
-            Intent intent = new Intent((getBaseContext()), RecyclerViewActivity.class);
-            startActivity(intent);
+            toolbar.setTitle("Món ăn yêu thích của bạn");
         } else if (id == R.id.nav_shop) {
             ShoppingListFragment shoppingListFragment = new ShoppingListFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
