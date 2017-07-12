@@ -1,0 +1,48 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#f7f9f4"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:gravity="center|left"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/silverware"
+                    />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primaryDark"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hướng dẫn"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="16dp"
+                android:textColor="@color/bb_inActiveBottomBarItemColor"
+                android:textSize="18sp"
+                android:id="@+id/content_cach_nau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Xin lỗi , Phần này chúng tôi đang cập nhật !!!"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

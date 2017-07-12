@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/more_content"
+    android:background="#fff"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:background="#fff"
+        android:id="@+id/appBar_more"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:elevation="10dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            app:titleEnabled="false"
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap"
+            app:expandedTitleGravity="center|left"
+            >
+            <ImageView
+                android:id="@+id/header_more"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/background_navigation"
+                app:layout_collapseMode="pin" />
+            <ImageView
+                android:background="@drawable/gradient"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_bar_more_food"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/MyMaterialTheme.PopupOverlay"
+                app:layout_collapseMode="pin"
+                >
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <GridView
+        android:paddingTop="16dp"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:nestedScrollingEnabled="true"
+        android:layout_height="match_parent"
+        android:columnWidth="150dp"
+        android:id="@+id/grid_view"
+        android:numColumns="auto_fit"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</android.support.design.widget.CoordinatorLayout>
