@@ -11,11 +11,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.rufflez.Cookbook.databases.FoodModel;
+import com.example.rufflez.Cookbook.examplerecyclerview.RecyclerViewActivity;
 import com.example.rufflez.Cookbook.fragments.FavoritesFragment;
 import com.example.rufflez.Cookbook.fragments.HomeFragment;
 import com.example.rufflez.Cookbook.fragments.ShoppingListFragment;
@@ -151,7 +151,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.addToBackStack(favoritesFragment.getClass().getName());
             ft.commit();
         } else if (id == R.id.nav_list_food) {
-
+            Intent intent = new Intent((getBaseContext()), RecyclerViewActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_shop) {
             ShoppingListFragment shoppingListFragment = new ShoppingListFragment();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
